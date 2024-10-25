@@ -9,15 +9,16 @@
 </head>
 
 <body>
-    <div class="container mx-auto px-4 flex">
-        <header class="mb-8 w-1/2">
-            <h1 class="text-3xl font-bold text-left">OUR OUTPUT</h1>
+    <div class="container mx-auto px-4 flex border-y-black py-10 border-y">
+        <header class=" w-1/2 border-x-black border-r flex flex-col gap-3">
+            <h1 class="text-7xl font-extrabold text-left ">OUR</h1>
+            <h1 class="text-7xl font-extrabold text-left ">OUTPUT</h1>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-            <div class="flex flex-row p-4 border border-gray-200 rounded-lg shadow-md">
-                <div class="flex items-center ">
-                    <x-svg.iconSvg type="products" class="h-8 w-8 mr-2" aria-label="Products Icon" />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 w-full ml-6">
+            <div class="flex flex-row p-4 border border-gray-200 rounded-lg gap-2">
+                <div class="flex  ">
+                    <x-svg.iconSvg type="products" class="h-6 w-6 mr-2" aria-label="Products Icon" />
                 </div>
                 <div class="flex flex-col">
                     <h2 class="text-xl font-semibold">PRODUCTS</h2>
@@ -26,9 +27,9 @@
                 </div>
             </div>
 
-            <div class="flex flex-row p-4 border border-gray-200 rounded-lg shadow-md">
-                <div class="flex items-center mb-2">
-                    <x-svg.iconSvg type="startups" class="h-8 w-8 mr-2" aria-label="Startups Icon" />
+            <div class="flex flex-row p-4 border border-gray-200 rounded-lg gap-2">
+                <div class="flex">
+                    <x-svg.iconSvg type="startups" class="h-6 w-6 mr-2" aria-label="Startups Icon" />
                 </div>
                 <div class="flex flex-col">
                     <h2 class="text-xl font-semibold">STARTUPS</h2>
@@ -37,9 +38,9 @@
                 </div>
             </div>
 
-            <div class="flex flex-row p-4 border border-gray-200 rounded-lg shadow-md">
-                <div class="flex items-center mb-2">
-                    <x-svg.iconSvg type="publications" class="h-8 w-8 mr-2" aria-label="Publications Icon" />
+            <div class="flex flex-row p-4 border border-gray-200 rounded-lg gap-2">
+                <div class="flex ">
+                    <x-svg.iconSvg type="publications" class="h-6 w-6 mr-2" aria-label="Publications Icon" />
                 </div>
                 <div class="flex flex-col">
                     <h2 class="text-xl font-semibold">PUBLICATIONS</h2>
@@ -48,9 +49,9 @@
                     <p class="text-gray-700">Delve into the wealth of knowledge that CNDE lab has contributed to the field of non-destructive evaluation. Our publications cover a wide range of topics, providing valuable insights and research findings.</p>
                 </div>
             </div>
-            <div class="flex flex-row p-4 border border-gray-200 rounded-lg shadow-md">
-                <div class="flex items-center mb-2">
-                    <x-svg.iconSvg type="patents" class="h-8 w-8 mr-2" aria-label="Patents Icon" />
+            <div class="flex flex-row p-4 border border-gray-200 rounded-lg gap-2">
+                <div class="flex ">
+                    <x-svg.iconSvg type="patents" class="h-6 w-6 mr-2" aria-label="Patents Icon" />
                 </div>
                 <div class="flex flex-col">
 
@@ -61,9 +62,9 @@
             </div>
 
 
-            <div class="flex flex-row p-4 border border-gray-200 rounded-lg shadow-md">
-                <div class="flex items-center mb-2">
-                    <x-svg.iconSvg type="awards" class="h-8 w-8 mr-2" aria-label="Awards Icon" />
+            <div class="flex flex-row p-4 border border-gray-200 rounded-lg gap-2">
+                <div class="flex ">
+                    <x-svg.iconSvg type="awards" class="h-6 w-6 mr-2" aria-label="Awards Icon" />
                 </div>
                 <div class="flex flex-col">
 
@@ -73,9 +74,9 @@
                 </div>
             </div>
 
-            <div class="flex flex-row p-4 border border-gray-200 rounded-lg shadow-md">
-                <div class="flex items-center mb-2">
-                    <x-svg.iconSvg type="talent-development" class="h-8 w-8 mr-2" aria-label="Talent Development Icon" />
+            <div class="flex flex-row p-4 border border-gray-200 rounded-lg gap-2">
+                <div class="flex ">
+                    <x-svg.iconSvg type="talent-development" class="h-6 w-6 mr-2" aria-label="Talent Development Icon" />
                 </div>
                 <div class="flex flex-col">
                 <h2 class="text-xl font-semibold">TALENT DEVELOPMENT</h2>
@@ -84,9 +85,9 @@
                 </div>
             </div>
 
-            <div class="flex flex-row p-4 border border-gray-200 rounded-lg shadow-md">
-                <div class="flex items-center mb-2">
-                    <x-svg.iconSvg type="publications" class="h-8 w-8 mr-2" aria-label="Collaborations Icon" />
+            <div class="flex flex-row p-4 border border-gray-200 rounded-lg gap-2">
+                <div class="flex ">
+                    <x-svg.iconSvg type="publications" class="h-6 w-6 mr-2" aria-label="Collaborations Icon" />
                 </div>
                 <div class="flex flex-col">
                 <h2 class="text-xl font-semibold">COLLABORATIONS</h2>
@@ -97,9 +98,9 @@
 
 
 
-            <div class="flex flex-row p-4 border border-gray-200 rounded-lg shadow-md">
-                <div class="flex items-center mb-2">
-                    <x-svg.iconSvg type="social-impacts" class="h-8 w-8 mr-2" aria-label="Social Impacts Icon" />
+            <div class="flex flex-row p-4 border border-gray-200 rounded-lg gap-2">
+                <div class="flex ">
+                    <x-svg.iconSvg type="social-impacts" class="h-6 w-6 mr-2" aria-label="Social Impacts Icon" />
                 </div>
                 <div class="flex flex-col">
                 <h2 class="text-xl font-semibold">SOCIAL IMPACTS</h2>

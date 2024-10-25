@@ -77,7 +77,7 @@
     </header>
 @endisset
 
-<div class="w-full bg-white  px-6 flex flex-col gap-2 py-3">
+<div class="w-full bg-white  px-6 flex flex-col gap-2 ">
             @yield('content')
             <!-- Page Content -->
 

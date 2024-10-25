@@ -7,12 +7,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-<div class="container mx-auto px-4">
+<div class="container mx-auto px-4 border-y-black py-10 border-y">
         <!-- Main Section -->
-        <div class="flex flex-col md:flex-row gap-6 my-12">
+        <div class="flex flex-col md:flex-row gap-6 my-12 ">
             <!-- Left Heading Section -->
-            <div class="w-full md:w-1/3">
-                <h1 class="text-4xl font-bold">Our STARTUPS</h1>
+            <div class="w-full md:w-1/3 border-r-black py-10 border-r">
+                <h1 class="text-7xl font-extrabold text-left">OUR STARTUPS</h1>
             </div>
 
             <!-- Right Content Section -->

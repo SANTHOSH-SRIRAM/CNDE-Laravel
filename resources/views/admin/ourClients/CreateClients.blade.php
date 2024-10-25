@@ -1,26 +1,50 @@
-@extends('layouts.app')
+@extends('admin.layouts.AdminLayout')
 
 @section('content')
-<div class="container">
-    <h1>Add New Client Category</h1>
+<h1>Create New Client</h1>
 
-    @if(session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
-    @endif
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 
-    <form action="{{ route('client-categories.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div class="mb-3">
-            <label for="category_name" class="form-label">Category Name</label>
-            <input type="text" name="category_name" class="form-control" id="category_name" required>
+<form action="{{ route('clients.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+
+    <div class="form-group">
+        <label for="name">Client Name:</label>
+        <input type="text" name="name" id="name" class="form-control" required>
+    </div>
+
+    <div id="logos-container">
+        <div class="logo-group">
+            <div class="form-group">
+                <label for="logos[]">Client Logo:</label>
+                <input type="file" name="logos[]" class="form-control" required>
+            </div>
+            <button type="button" class="btn btn-secondary add-logo">Add Logo</button>
         </div>
+    </div>
 
-        <div class="mb-3">
-            <label for="logo" class="form-label">Logo</label>
-            <input type="file" name="logo" class="form-control" id="logo" required>
-        </div>
+    <button type="submit" class="btn btn-primary">Create Client</button>
+</form>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
+<script>
+    document.querySelector('.add-logo').addEventListener('click', function () {
+        const container = document.getElementById('logos-container');
+
+        const logoGroup = document.createElement('div');
+        logoGroup.classList.add('logo-group');
+
+        logoGroup.innerHTML = `
+            <div class="form-group">
+                <label for="logos[]">Client Logo:</label>
+                <input type="file" name="logos[]" class="form-control" required>
+            </div>
+        `;
+
+        container.appendChild(logoGroup);
+    });
+</script>
 @endsection

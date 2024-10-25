@@ -2,25 +2,47 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Clients;
+use App\Models\Discover;
 use App\Models\Menus;
 use Illuminate\Http\Request;
 
 class TabsController extends Controller
-
 {
+    // Fetch menus with submenus and return to the view
+    protected function getMenus()
+    {
+        return Menus::with('submenus')->get(); // Fetch menus with submenus
+    }
+
     public function index()
     {
-        $menus = Menus::with('submenus')->get(); // Fetch menus with submenus
-   
-        return view('welcome', ['activeTab' => 'news'], compact('menus')); // Default tab
+        $menus = $this->getMenus(); // Use the helper method to fetch menus
+        $clients = Clients::all();
+
+        foreach ($clients as $client) {
+            if (is_string($client->logo_paths)) {
+                $client->logo_paths = json_decode($client->logo_paths, true);
+            }
+        }
+        return view('welcome', [
+            'activeTab' => 'news', // Default tab
+            'discovers' => Discover::all(), // Fetch all Discover entries if needed
+            'menus' => $menus, // Pass menus to the view
+            'clients' => $clients,
+        ]);
     }
 
     public function showTab($tab)
     {
-        if (!in_array($tab, ['news', 'events', 'announcements'])) {
-            abort(404);
-        }
-        
-        return view('welcome', ['activeTab' => $tab]);
+
+        $menus = $this->getMenus(); // Use the helper method to fetch menus
+        $discovers = Discover::all(); // Fetch all Discover entries
+
+        return view('welcome', [
+            'discovers' => $discovers, // Pass the collection of Discover models
+            'activeTab' => $tab, // Set active tab based on the route parameter
+            'menus' => $menus // Pass menus to the view
+        ]);
     }
 }

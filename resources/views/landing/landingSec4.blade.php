@@ -8,16 +8,16 @@
 </head>
 <body>
     <div>
-        <div>
-            <span class="text-4xl font-bold">OUR VALUES</span>
+        <div class="border-y-black py-10 border-y w-full flex justify-center ">
+            <span class="text-7xl font-semibold">OUR VALUES</span>
         </div>
-        <div class="flex flex-col md:flex-row gap-6 my-12">
-            <div>
-            <img src="\images\OurValues.png" alt="Our Values" class="w-full rounded-lg shadow-lg h-96">
+        <div class="flex flex-col md:flex-row gap-6 my-12 border-y-black py-10 border-y">
+            <div class="w-2/3 border-x-black pr-10 border-r">
+            <img src="\images\OurValues.png" alt="Our Values" class="w-full rounded-lg  h-96">
 
             </div>
-            <div class="flex flex-col">
-                <div class="flex flex-row">
+            <div class="flex flex-col gap-5">
+                <div class="flex flex-row gap-3">
                     <div>
                     <x-svg.iconSvg type="value1" class="h-8 w-8 mr-2" aria-label="Products Icon" />
 
@@ -27,7 +27,7 @@
                         <p>Deep-research based non-destructive technologies for improved performance, enhanced safety, and increased life for industrial applications and relevant technologies for societal well-being.</p>
                     </div>
                 </div>
-                <div class="flex flex-row">
+                <div class="flex flex-row gap-3">
                     <div>
                     <x-svg.iconSvg type="value2" class="h-8 w-8 mr-2" aria-label="Products Icon" />
 
@@ -41,7 +41,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="flex flex-row">
+                <div class="flex flex-row gap-3">
                     <div>
                     <x-svg.iconSvg type="value3" class="h-8 w-8 mr-2" aria-label="Products Icon" />
 

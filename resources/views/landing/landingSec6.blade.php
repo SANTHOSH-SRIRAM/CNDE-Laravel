@@ -10,7 +10,8 @@
 
     <style>
         /* Customize Swiper button colors */
-        .swiper-button-next, .swiper-button-prev {
+        .swiper-button-next,
+        .swiper-button-prev {
             color: #000;
         }
 
@@ -23,98 +24,53 @@
 <body class="bg-white">
 
     <!-- Clients Section -->
-    <div class="container mx-auto py-12 flex">
+    <div class="container mx-auto flex border-y-black py-10 border-y">
         <!-- Left Section: Our Clients Title -->
-        <div class="w-1/4 flex flex-col justify-center">
-            <h1 class="text-5xl font-bold tracking-wide">OUR CLIENTS</h1>
+        <div class="w-2/3 flex flex-col justify-center">
+            <h1 class="text-7xl font-extrabold text-left">OUR CLIENTS</h1>
         </div>
 
         <!-- Divider -->
         <div class="divider h-auto mx-8"></div>
-@foreach($clients as client)
+
         <!-- Right Section: Categories and Logos -->
-        <div class="w-3/4">
-            <!-- Aerospace Logos Carousel -->
-            <div class="mb-12">
-                <h2 class="text-2xl font-semibold mb-4  ">AEROSPACE</h2>
-                <div class="swiper mySwiperAerospace">
-                    <div class="swiper-wrapper">
-                        <!-- Logo 1 -->
-                        <div class="swiper-slide flex justify-center">
-                            <img src="{{ asset('path_to_image/isro.png') }}" alt="ISRO Logo" class="h-24">
-                        </div>
-                        <!-- Logo 2 -->
-                        <div class="swiper-slide flex justify-center">
-                            <img src="{{ asset('path_to_image/ge.png') }}" alt="GE Logo" class="h-24">
-                        </div>
-                        <!-- Logo 3 -->
-                        <div class="swiper-slide flex justify-center">
-                            <img src="{{ asset('path_to_image/hal.png') }}" alt="HAL Logo" class="h-24">
-                        </div>
-                        <div class="swiper-slide flex justify-center">
-                            <img src="{{ asset('path_to_image/hal.png') }}" alt="HAL Logo" class="h-24">
-                        </div>
-                        <div class="swiper-slide flex justify-center">
-                            <img src="{{ asset('path_to_image/hal.png') }}" alt="HAL Logo" class="h-24">
-                        </div>
-                        <div class="swiper-slide flex justify-center">
-                            <img src="{{ asset('path_to_image/hal.png') }}" alt="HAL Logo" class="h-24">
-                        </div>
-                        <div class="swiper-slide flex justify-center">
-                            <img src="{{ asset('path_to_image/hal.png') }}" alt="HAL Logo" class="h-24">
-                        </div>
-                        <div class="swiper-slide flex justify-center">
-                            <img src="{{ asset('path_to_image/hal.png') }}" alt="HAL Logo" class="h-24">
+        <div class="w-2/3">
+
+            <div class="flex flex-col gap-8">
+                @foreach($clients as $client)
+                    <div class="w-full flex justify-center">
+                        <h2 class="text-2xl font-semibold border-y-black py-4 border-y">{{ $client->section }}</h2>
+                    </div>
+
+                    <div class="mb-10"> <!-- Added margin-bottom for gap between clients -->
+                        <div class="swiper mySwiperAerospace">
+                            <div class="swiper-wrapper">
+                                @if(!empty($client->logo_paths))
+                                    @foreach($client->logo_paths as $logo)
+                                        <div class="swiper-slide flex justify-center">
+                                            <!-- Check if logo path exists -->
+                                            @if(isset($logo['logo']))
+                                                <img src="{{ asset('storage/' . $logo['logo']) }}" alt="Client Logo" class="h-24">
+                                            @else
+                                                <p>No logo available</p>
+                                            @endif
+                                        </div>
+                                    @endforeach
+                                @else
+                                    <div class="swiper-slide flex justify-center">
+                                        <p>No logos available</p>
+                                    </div>
+                                @endif
+                            </div>
+                            <!-- Pagination -->
+                            <div class="swiper-pagination"></div>
                         </div>
                     </div>
-                    <!-- Pagination -->
-                    <div class="swiper-pagination"></div>
-                </div>
+                @endforeach
             </div>
 
-            <!-- Manufacturing Logos Carousel -->
-            <div class="mb-12">
-                <h2 class="text-2xl font-semibold mb-4 ">MANUFACTURING</h2>
-                <div class="swiper mySwiperManufacturing">
-                    <div class="swiper-wrapper">
-                        <!-- Logo 4 -->
-                        <div class="swiper-slide flex justify-center">
-                            <img src="{{ asset('path_to_image/tata_steel.png') }}" alt="Tata Steel Logo" class="h-24">
-                        </div>
-                        <!-- Logo 5 -->
-                        <div class="swiper-slide flex justify-center">
-                            <img src="{{ asset('path_to_image/sieger.png') }}" alt="Sieger Logo" class="h-24">
-                        </div>
-                        <!-- Logo 6 -->
-                        <div class="swiper-slide flex justify-center">
-                            <img src="{{ asset('path_to_image/havells.png') }}" alt="Havells Logo" class="h-24">
-                        </div>
-                    </div>
-                    <!-- Pagination -->
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-
-            <!-- Defence Logos Carousel -->
-            <div>
-                <h2 class="text-2xl font-semibold mb-4 ">DEFENCE</h2>
-                <div class="swiper mySwiperDefence">
-                    <div class="swiper-wrapper">
-                        <!-- Logo 7 -->
-                        <div class="swiper-slide flex justify-center">
-                            <img src="{{ asset('path_to_image/logo7.png') }}" alt="Defence Logo 1" class="h-24">
-                        </div>
-                        <!-- Logo 8 -->
-                        <div class="swiper-slide flex justify-center">
-                            <img src="{{ asset('path_to_image/logo8.png') }}" alt="Defence Logo 2" class="h-24">
-                        </div>
-                    </div>
-                    <!-- Pagination -->
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
         </div>
-        @endforeach
+
     </div>
 
     <!-- Swiper JS -->
@@ -129,7 +85,6 @@
                 delay: 3000,
                 disableOnInteraction: false,
             },
-
         });
 
         // Initialize Swiper with Autoplay for Manufacturing
