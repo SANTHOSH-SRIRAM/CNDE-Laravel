@@ -3,36 +3,30 @@
 @extends('layouts.app')
 
 @section('content')
-
-<!-- Display the submenu name using the bigHeading layout -->
 @include('layouts.bigHeading', ['submenuName' => $submenu->name])
 
-<div class="container mx-auto mt-5">
-    <h1 class="text-3xl font-bold">{{ $submenu->name }} - Research Entries</h1>
 
-    <!-- Display each research entry -->
-    @foreach ($researches as $research)
-        <div class="mt-8 p-6 bg-white rounded-lg shadow-lg">
-            <!-- Research Name -->
-            <h2 class="text-2xl font-semibold mb-2">{{ $research->name }}</h2>
+@foreach($researches as $research)
+<div class="container justify-between flex items-stretch ">
+    <div>
+        <h1 class="text-7xl font-bold">{{ $research ->name }}</h1>
+    </div>
 
-            <!-- Display Methods -->
-            <h3 class="text-lg font-medium mt-4">Methods:</h3>
-            <ul class="list-disc pl-5 mt-2">
-                @foreach($research->methods as $method)
-                    <li class="mb-4">
-                        <strong>{{ $method['method'] }}</strong>
-                        <div class="mt-2">
-                            @if(isset($method['photo']))
-                                <img src="{{ asset('storage/' . $method['photo']) }}" alt="Method Image" class="w-full h-auto mb-2">
-                            @endif
-                            <p>{{ $method['description'] }}</p>
-                        </div>
-                    </li>
-                @endforeach
-            </ul>
+    <div class="flex-col items-center">
+        @foreach($research->methods as $method)
+        <div class="mt-10"> <img src="{{ asset('storage/' . $method['photo'] )}}" alt="">
+            <h2 class="flex justify-center text-3xl font-bold mt-5">{{ $method['method'] }}</h2>
+            <a href="">{{ $method['description'] }}</a>
         </div>
-    @endforeach
+        @endforeach
+    </div>
+
+
+
+
+
+
 </div>
+@endforeach
 
 @endsection

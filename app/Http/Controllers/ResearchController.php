@@ -18,6 +18,8 @@ class ResearchController extends Controller
         $menus = Menus::with('submenus')->get();
 
         // Pass the research data to the view
+        $menus = Menus::with('submenus')->get();
+
         return view('research.index', compact('researches', 'menus'));
     }
 
