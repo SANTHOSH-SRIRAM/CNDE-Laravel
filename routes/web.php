@@ -31,7 +31,9 @@ Route::get('/startups/{id}', [StartupsController::class, 'show'])->name('startup
 Route::get('/research', [ResearchController::class, 'index'])->name('research.index');
 
 
-Route::get('/research/{id}', [ResearchController::class, 'show'])->name('research.show');
+Route::get('/research/{submenu_name}', [ResearchController::class, 'show'])->name('research.show');
+
+
 
 Route::get('/students', [StudentsController::class, 'index'])->name('students.index');
 

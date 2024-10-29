@@ -30,7 +30,7 @@
                                     {{ $submenu->name }} - Startup: {{ $submenu->startups->first()->name }}
                                 </a>
                                 @elseif ($submenu->research->isNotEmpty())
-                                <a href="{{ route('research.show', $submenu->research->first()->id) }}" class="text-gray-700 hover:text-black">
+                                <a href="{{ route('research.show', ['submenu_name' => $submenu->name]) }}" class="text-gray-700 hover:text-black">
                                     {{ $submenu->name }}
                                 </a>
                                 @elseif ($submenu->product->isNotEmpty())

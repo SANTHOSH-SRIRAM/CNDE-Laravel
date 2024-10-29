@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', $submenuName ?? 'Default Submenu') }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -17,9 +17,11 @@
 </head>
 
 <body>
-    <div class="h-96 flex flex-row justify-center items-center border-b border-black">
-<h1 class="font-black text-7xl ">{{ $submenuName ?? 'Default Submenu' }}</h1>
-</div>
+    <div class="w-full h-dvh flex flex-row justify-center items-center border-b border-black">
+        <h1 class="uppercase font-black text-8xl ">{{ $submenuName ?? 'Default Submenu' }}</h1>
+        <img class="inline" src="..." alt="...">
+
+    </div>
 </body>
 
 </html>
