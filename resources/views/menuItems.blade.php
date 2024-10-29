@@ -30,9 +30,11 @@
                                     {{ $submenu->name }} - Startup: {{ $submenu->startups->first()->name }}
                                 </a>
                                 @elseif ($submenu->research->isNotEmpty())
-                                <a href="{{ route('research.show', $submenu->research->first()->id) }}" class="text-gray-700 hover:text-black">
+                                <a href="{{ route('research.show', ['submenu_name' => $submenu->name]) }}" class="text-gray-700 hover:text-black">
                                     {{ $submenu->name }}
                                 </a>
+
+
                                 @elseif ($submenu->product->isNotEmpty())
                                 <a href="{{ route('product.show', $submenu->product->first()->id) }}" class="text-gray-700 hover:text-black">
                                     {{ $submenu->name }}
@@ -43,7 +45,12 @@
                                 </a>
 
                                 @elseif ($submenu->students->isNotEmpty())
-                                <a href="{{ route('students.show', $submenu->students->first()->id) }}" class="text-gray-700 hover:text-black">
+                                <a href="{{ route('students.show', $submenu->students->first()->id)  }}" class="text-gray-700 hover:text-black">
+                                    {{ $submenu->name }}
+                                </a>
+
+                                @elseif ($submenu->professors->isNotEmpty())
+                                <a href="{{ route('professor.index', $submenu->professors->first()->id) }}" class="text-gray-700 hover:text-black">
                                     {{ $submenu->name }}
                                 </a>
 

@@ -3,7 +3,9 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProfessorsResource\Pages;
+use App\Models\Menus;
 use App\Models\Professors;
+use App\Models\Submenu;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -20,6 +22,28 @@ class ProfessorsResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\Select::make('menu_id')
+                ->label('Menu')
+                ->options(Menus::all()->pluck('name', 'id')) // Load menus
+                ->required()
+                ->reactive() // Make it reactive
+                ->afterStateUpdated(function (callable $set) {
+                    // Reset the submenu when the menu changes
+                    $set('submenu_id', null);
+                }),
+
+            // Select field for Submenu Name
+            Forms\Components\Select::make('submenu_id')
+                ->label('Submenu')
+                ->options(function (callable $get) {
+                    $menuId = $get('menu_id'); // Get selected menu ID
+                    if ($menuId) {
+                        // Fetch submenus based on the selected menu
+                        return Submenu::where('menu_id', $menuId)->pluck('name', 'id');
+                    }
+                    return Submenu::all()->pluck('name', 'id'); // Default case if no menu is selected
+                })
+                ->required(),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->label('Name'),

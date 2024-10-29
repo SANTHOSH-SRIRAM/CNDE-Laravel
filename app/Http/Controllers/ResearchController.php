@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 use App\Models\Menus;
 use App\Models\Research;
+use App\Models\Submenu;
 use Illuminate\Http\Request;
 
 class ResearchController extends Controller
@@ -13,17 +14,20 @@ class ResearchController extends Controller
     public function index()
     {
         // Fetch all research entries from the database
-        $researches = Research::all();
+        $researches = Research::with(['submenu'])->get();
+        $menus = Menus::with('submenus')->get();
 
         // Pass the research data to the view
-        return view('research.index', compact('researches'));
+        return view('research.index', compact('researches', 'menus'));
     }
 
     // Show a specific research entry by ID (as before)
-    public function show($id)
+    public function show($submenu_name)
     {
-        $research = Research::with('submenu')->findOrFail($id);
+        $submenu = Submenu::where('name', $submenu_name)->firstOrFail();
+        $researches = Research::where('submenu_id', $submenu->id)->get();
         $menus = Menus::with('submenus')->get();
-        return view('research.show', compact('research', 'menus'));
+        
+        return view('research.show', compact('researches', 'submenu', 'menus'));
     }
 }

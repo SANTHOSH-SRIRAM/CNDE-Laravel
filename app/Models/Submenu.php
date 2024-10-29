@@ -39,4 +39,8 @@ class Submenu extends Model
     {
         return $this->hasMany(Students::class);
     }
+    public function professors()
+    {
+        return $this->hasMany(Professors::class);
+    }
 }

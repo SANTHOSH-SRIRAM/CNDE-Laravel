@@ -51,6 +51,7 @@ class StartupsResource extends Resource
                     ->required(),
 
                 Forms\Components\FileUpload::make('logo')
+                ->required()
 
                     ->label('Logo'),
 

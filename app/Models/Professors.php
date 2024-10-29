@@ -12,6 +12,8 @@ class Professors extends Model
     protected $table = 'professors';
 
     protected $fillable = [
+        'menu_id',
+        'submenu_id',
         'name',
         'photo',
         'designation',
@@ -45,5 +47,21 @@ class Professors extends Model
     {
         $this->attributes['additional_designation'] = json_encode($value); // Encode array to JSON string
     }
+    /**
+     * Relationship to the Menu model.
+     * This links the research to a specific menu.
+     */
+    public function menu()
+    {
+        return $this->belongsTo(Menus::class, 'menu_id');
+    }
 
+    /**
+     * Relationship to the Submenu model.
+     * This links the research to a specific submenu.
+     */
+    public function submenu()
+    {
+        return $this->belongsTo(Submenu::class, 'submenu_id');
+    }
 }

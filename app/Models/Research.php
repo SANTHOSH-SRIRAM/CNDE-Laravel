@@ -42,4 +42,5 @@ class Research extends Model
     {
         return $this->belongsTo(Submenu::class, 'submenu_id');
     }
+    
 }

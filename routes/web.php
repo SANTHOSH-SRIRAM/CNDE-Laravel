@@ -6,6 +6,7 @@ use App\Http\Controllers\FundedResearchController;
 use App\Http\Controllers\GoogleScholarController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfessorController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ResearchController;
 use App\Http\Controllers\StartupController;
@@ -31,13 +32,17 @@ Route::get('/startups/{id}', [StartupsController::class, 'show'])->name('startup
 Route::get('/research', [ResearchController::class, 'index'])->name('research.index');
 
 
-Route::get('/research/{id}', [ResearchController::class, 'show'])->name('research.show');
+Route::get('/research/{submenu_name}', [ResearchController::class, 'show'])->name('research.show');
 
 Route::get('/students', [StudentsController::class, 'index'])->name('students.index');
 
 
 Route::get('/students/{id}', [StudentsController::class, 'show'])->name('students.show');
 
+Route::get('/faculty', [ProfessorController::class, 'index'])->name('professor.index');
+
+
+Route::get('/faculty/{id}', [ProfessorController::class, 'show'])->name('professor.show');
 
 Route::get('/fundedresearch', [FundedResearchController::class, 'index'])->name('fundedresearch.index');
 
