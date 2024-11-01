@@ -16,13 +16,13 @@
 
 <body class="w-full bg-white  px-6 flex flex-col gap-2 py-3 h-max">
     <div class="flex flex-col gap-10">
-    <img src="{{ asset('/images/bg.png') }}" alt="" class="w-full h-[68.92vh]">
+    <img src="{{ asset('storage/' . $landing->hero_img)   }}" alt="" class="w-full h-[68.92vh]">
 
         <div>
             @include('landing.landingSec1', ['activeTab' => $activeTab, 'discovers' => $discovers, 'menus' => $menus])
         </div>
         <div>
-            @include('landing.landingSec2')
+            @include('landing.landingSec2', ['ouroutputs' => $ouroutputs])
         </div>
         <div>
             @include('landing.landingSec3')

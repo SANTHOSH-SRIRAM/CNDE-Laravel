@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container mx-auto p-4">
-    @include('layouts.bigHeading', ['submenuName' => 'SCIENTIFIC PUBLICATIONS'])
+    @include('layouts.bigHeading', ['submenuName' => 'SCIENTIFIC PUBLICATIONS', 'submenuimg'=>''])
 
 
         <!-- Form to fetch Google Scholar Publications -->

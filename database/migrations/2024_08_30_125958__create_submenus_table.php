@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('menu_id'); // Foreign key column
-            $table->string('subparent_name')->nullable(); 
+            $table->string('subparent_name')->nullable();
+            $table->string('image');
+
             $table->timestamps();
 
             // Define foreign key constraint

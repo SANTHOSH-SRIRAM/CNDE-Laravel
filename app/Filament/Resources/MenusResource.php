@@ -33,6 +33,8 @@ class MenusResource extends Resource
                             ->required()
                             ->label('Submenu Name'),
 
+                            Forms\Components\FileUpload::make('image')
+                            ->label('Image'),
                         // Subparent Menu Name Input
                         Forms\Components\TextInput::make('subparent_name')
                             ->required()

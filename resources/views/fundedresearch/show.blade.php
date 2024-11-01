@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@include('layouts.bigHeading', ['submenuName' => $researches->submenu->name])
+@include('layouts.bigHeading', ['submenuName' => $researches->submenu->name, 'submenuimg'=>$researches->submenu->image])
 
 <div class="container mx-auto mt-5">
     <h1 class="text-2xl font-bold mb-5">Funded Research List</h1>
