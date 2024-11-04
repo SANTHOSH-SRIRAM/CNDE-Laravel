@@ -9,13 +9,12 @@
 </head>
 
 <body>
-    <div class="container mx-auto px-4 flex border-y-black py-10 border-y">
-        <header class=" w-1/2 border-x-black border-r flex flex-col gap-3">
-            <h1 class="text-7xl font-extrabold text-left ">OUR</h1>
-            <h1 class="text-7xl font-extrabold text-left ">OUTPUT</h1>
-        </header>
+    <div class="mx-auto w-full flex border-y-black py-10 border-y justify-between">
+        <div class=" w-1/3 border-x-black border-r flex flex-col gap-3">
+            <h1 class="2xl:text-7xl md:text-4xl font-montserrat font-[600] text-left flex-col w-1/2 ">OUR OUTPUT</h1>
+        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 w-full ml-6">
+        <div class="grid 2xl:grid-cols-2 md:grid-cols-1 gap-4 w-3/5">
             <div class="flex flex-row p-4 border border-gray-200 rounded-lg gap-2">
                 <div class="flex  ">
                     <x-svg.iconSvg type="products" class="h-6 w-6 mr-2" aria-label="Products Icon" />

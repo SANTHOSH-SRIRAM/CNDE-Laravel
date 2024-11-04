@@ -9,7 +9,7 @@
 <body>
     <div>
         <div class="border-y-black py-10 border-y w-full flex justify-center ">
-            <span class="text-7xl font-semibold">OUR VALUES</span>
+            <span class="text-7xl font-montserrat font-[600]">OUR VALUES</span>
         </div>
         <div class="flex flex-col md:flex-row gap-6 my-12 border-y-black py-10 border-y">
             <div class="w-2/3 border-x-black pr-10 border-r">

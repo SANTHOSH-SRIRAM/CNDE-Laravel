@@ -24,14 +24,13 @@
 <body class="bg-white">
 
     <!-- Clients Section -->
-    <div class="container mx-auto flex border-y-black py-10 border-y">
+    <div class="mx-auto w-full flex border-y-black py-10 border-y justify-between">
         <!-- Left Section: Our Clients Title -->
-        <div class="w-2/3 flex flex-col justify-center">
-            <h1 class="text-7xl font-extrabold text-left">OUR CLIENTS</h1>
+        <div class="w-1/3 border-x-black border-r flex">
+            <h1 class="text-7xl font-montserrat font-[600] text-left w-1/2">OUR CLIENTS</h1>
         </div>
 
-        <!-- Divider -->
-        <div class="divider h-auto mx-8"></div>
+       
 
         <!-- Right Section: Categories and Logos -->
         <div class="w-2/3">
