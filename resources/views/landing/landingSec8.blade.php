@@ -12,7 +12,7 @@
 
     <!-- Main Image Section -->
     <div class="relative">
-        <img src="\images\contact.png" alt="Deers" class="w-full h-50 object-cover rounded-t-3xl">
+        <img src="{{ asset('storage/' . $landing->footer_img)   }}" alt="Deers" class="w-full h-[400px] object-cover rounded-t-3xl">
     </div>
 
     <!-- Container -->

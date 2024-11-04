@@ -19,7 +19,7 @@
 <body>
     <div class="w-full h-dvh flex flex-row justify-center items-center border-b border-black">
         <h1 class="uppercase font-black text-8xl ">{{ $submenuName ?? 'Default Submenu' }}</h1>
-        <img class="inline" src="..." alt="...">
+        <img class="inline" src="{{ asset('storage/' . $submenuimg)   }}" alt="...">
 
     </div>
 </body>

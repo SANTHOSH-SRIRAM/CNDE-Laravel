@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@include('layouts.bigHeading', ['submenuName' => $startup->submenu->name])
+@include('layouts.bigHeading', ['submenuName' => $startup->submenu->name, 'submenuimg'=>$startup->submenu->image])
 
 <div class="container mx-auto mt-5">
     <h1 class="text-2xl font-bold">{{ $startup->submenu->name }}</h1>

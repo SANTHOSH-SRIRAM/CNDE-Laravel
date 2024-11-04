@@ -3,7 +3,7 @@
 @extends('layouts.app')
 
 @section('content')
-@include('layouts.bigHeading', ['submenuName' => $student->submenu->name ])
+@include('layouts.bigHeading', ['submenuName' => $student->submenu->name , 'submenuimg'=>$student->submenu->image])
 
 <div class="container">
 

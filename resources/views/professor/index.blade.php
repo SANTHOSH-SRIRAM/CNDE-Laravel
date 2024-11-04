@@ -5,7 +5,7 @@
 @section('content')
 
 @if($professors->isNotEmpty() && $professors->first()->submenu)
-    @include('layouts.bigHeading', ['submenuName' => $professors->first()->submenu->name])
+    @include('layouts.bigHeading', ['submenuName' => $professors->first()->submenu->name , 'submenuimg'=>$professors->first()->submenu->image])
 @endif
 
 <div class="container my-10">

@@ -3,7 +3,7 @@
 @extends('layouts.app')
 
 @section('content')
-@include('layouts.bigHeading', ['submenuName' => $submenu->name])
+@include('layouts.bigHeading', ['submenuName' => $submenu->name] , 'submenuimg'=>$researches->submenu->image])
 
 
 @foreach($researches as $research)
