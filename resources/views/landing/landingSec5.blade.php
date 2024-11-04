@@ -1,105 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CNDE</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
+
 <body>
-<div class="container mx-auto px-4 border-y-black py-10 border-y">
+    <div class="mx-auto w-full  border-y-black py-10 border-y flex justify-between" id="verticalstartup">
         <!-- Main Section -->
-        <div class="flex flex-col md:flex-row gap-6 my-12 ">
-            <!-- Left Heading Section -->
-            <div class="w-full md:w-1/3 border-r-black py-10 border-r">
-                <h1 class="text-7xl font-extrabold text-left">OUR STARTUPS</h1>
+
+        <!-- Left Heading Section -->
+        <div class="w-full md:w-1/3 border-r-black  border-r py-10  ">
+            <h1 class="text-7xl font-montserrat font-[600] text-left w-1/2" id="col_leftstartup">OUR STARTUPS</h1>
+        </div>
+
+        <!-- Right Content Section -->
+        <div class="w-3/5 grid 2xl:grid-cols-2 gap-10 ">
+
+            <div class="flex flex-col justify-center items-center bg-[#F0F0F0] rounded-2xl h-60 ">
+                <x-svg.iconSvg type="dhvani" class="h-8 w-8 mr-2" aria-label="Products Icon" />
+                <h2>Dhvani Research</h2>
+
             </div>
 
-            <!-- Right Content Section -->
-            <div class="w-full md:w-2/3 flex flex-col gap-y-4">
-                <!-- First Full-width Image with Caption -->
+            <!-- Third Image with Caption -->
+            <div class="flex flex-col justify-center items-center bg-[#F0F0F0] rounded-2xl h-60">
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 ">
-                    <!-- Second Image with Caption -->
-                    <div class="flex flex-col items-center bg-[#F0F0F0] rounded-3xl h-72 ">
-                    <x-svg.iconSvg type="dhvani" class="h-8 w-8 mr-2" aria-label="Products Icon" />
-                        <span>Dhvani Research</span>
-                        
-                    </div>
+                <x-svg.iconSvg type="planys" class="h-8 w-8 mr-2" aria-label="Products Icon" />
+                <h2>Planys Technology</h2>
+            </div>
+            <div class="flex flex-col justify-center items-center bg-[#F0F0F0] rounded-2xl h-60">
 
-                    <!-- Third Image with Caption -->
-                    <div class="flex flex-col items-center bg-[#F0F0F0] rounded-3xl h-72">
-                        
-                    <x-svg.iconSvg type="planys" class="h-8 w-8 mr-2" aria-label="Products Icon" />
-                        <span>Planys Technology</span>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Second Image with Caption -->
-                    <div class="flex flex-col items-center bg-[#F0F0F0] rounded-3xl h-72">
-                        
-                    <x-svg.iconSvg type="detect" class="h-8 w-8 mr-2" aria-label="Products Icon" />
-                    <span>Detect Technologies</span>
-                        
-                    </div>
+                <x-svg.iconSvg type="detect" class="h-8 w-8 mr-2" aria-label="Products Icon" />
+                <h2>Detect Technologies</h2>
 
-                    <!-- Third Image with Caption -->
-                    <div class="flex flex-col items-center bg-[#F0F0F0] rounded-3xl h-72">
-                    <x-svg.iconSvg type="maximl" class="h-8 w-8 mr-2" aria-label="Products Icon" />
-                        
-                    <span>Maximal Labs</span>
-                        
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Second Image with Caption -->
-                    <div class="flex flex-col items-center bg-[#F0F0F0] rounded-3xl h-72">
-                    <x-svg.iconSvg type="solinas" class="h-8 w-8 mr-2" aria-label="Products Icon" />
-                    <span>Solinas Integrity</span>
-                        
-                        
-                    </div>
+            </div>
 
-                    <!-- Third Image with Caption -->
-                    <div class="flex flex-col items-center bg-[#F0F0F0] rounded-3xl h-72">
-                    <x-svg.iconSvg type="DAI" class="h-8 w-8 mr-2" aria-label="Products Icon" />
-                    <span>Dhvani Analytic Intelligence</span>
-                        
-                        
-                    </div>
-                </div>
-                <!-- Two-column Layout for the Next Images -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Second Image with Caption -->
-                    <div class="flex flex-col items-center bg-[#F0F0F0] rounded-3xl h-72">
-                    <x-svg.iconSvg type="dhvani" class="h-8 w-8 mr-2" aria-label="Products Icon" />
-                    <span>Dhvani Inspection Technologies</span>
-                        
-                        
-                    </div>
+            <!-- Third Image with Caption -->
+            <div class="flex flex-col justify-center items-center bg-[#F0F0F0] rounded-2xl h-60">
+                <x-svg.iconSvg type="maximl" class="h-8 w-8 mr-2" aria-label="Products Icon" />
 
-                    <!-- Third Image with Caption -->
-                    <div class="flex flex-col items-center bg-[#F0F0F0] rounded-3xl h-72">
-                    <x-svg.iconSvg type="xyma" class="h-8 w-8 mr-2" aria-label="Products Icon" />
-                    <span>Xyma Analytics</span>
-                        
-                        
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Second Image with Caption -->
-                    <div class="flex flex-col items-center bg-[#F0F0F0] rounded-3xl h-72">
-                    <x-svg.iconSvg type="azeriri" class="h-8 w-8 mr-2" aria-label="Products Icon" />
-                    <span>Azeriri</span>
-                        
-                        
-                    </div>
+                <h2>Maximal Labs</h2>
 
-                    <!-- Third Image with Caption -->
+            </div>
+            <div class="flex flex-col justify-center items-center bg-[#F0F0F0] rounded-2xl h-60">
+                <x-svg.iconSvg type="solinas" class="h-8 w-8 mr-2" aria-label="Products Icon" />
+                <h2>Solinas Integrity</h2>
 
-                </div>
+
+            </div>
+
+            <!-- Third Image with Caption -->
+            <div class="flex flex-col justify-center items-center bg-[#F0F0F0] rounded-2xl h-60">
+                <x-svg.iconSvg type="DAI" class="h-8 w-8 mr-2" aria-label="Products Icon" />
+                <h2>Dhvani Analytic Intelligence</h2>
+
+
+            </div>
+            <div class="flex flex-col justify-center items-center bg-[#F0F0F0] rounded-2xl h-60">
+                <x-svg.iconSvg type="dhvani" class="h-8 w-8 mr-2" aria-label="Products Icon" />
+                <h2>Dhvani Inspection Technologies</h2>
+
+
+            </div>
+
+            <!-- Third Image with Caption -->
+            <div class="flex flex-col justify-center items-center bg-[#F0F0F0] rounded-2xl h-60">
+                <x-svg.iconSvg type="xyma" class="h-8 w-8 mr-2" aria-label="Products Icon" />
+                <h2>Xyma Analytics</h2>
+
+
+            </div>
+            <div class="flex flex-col justify-center items-center bg-[#F0F0F0] rounded-2xl h-60">
+                <x-svg.iconSvg type="azeriri" class="h-8 w-8 mr-2" aria-label="Products Icon" />
+                <h2>Azeriri</h2>
+
+
             </div>
         </div>
+
     </div>
 </body>
+
+<script>
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        ScrollTrigger.update();
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    const section_1 = document.getElementById("verticalstartup");
+    const col_left = document.getElementById("col_leftstartup");
+    const timeln = gsap.timeline({
+        paused: true
+    });
+
+    const height = section_1.offsetHeight - col_left.offsetHeight - 100;
+
+    timeln.fromTo(col_left, {
+        y: 0
+    }, {
+        y: height,
+        duration: 1,
+        ease: 'none'
+    }, 0);
+
+    const scroll_1 = ScrollTrigger.create({
+        animation: timeln,
+        trigger: section_1,
+        start: 'top top',
+        end: 'bottom center',
+        scrub: true
+    });
+</script>
+
 </html>

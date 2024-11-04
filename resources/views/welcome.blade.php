@@ -14,7 +14,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 </head>
 
-<body class="w-full bg-white  px-6 flex flex-col gap-2 py-3 h-max">
+<body class="w-full bg-white  ">
     <div class="flex flex-col gap-10">
     <img src="{{ asset('storage/' . $landing->hero_img)   }}" alt="" class="w-full h-[68.92vh]">
 

@@ -12,9 +12,9 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                display: 'Montserrat',
+                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                montserrat: 'Montserrat',
                 Roboto:"Roboto",
-
             },
         },
     },
