@@ -9,7 +9,7 @@ class Products extends Model
 {
     use HasFactory;
 
-    protected $table = 'products';
+    protected $table = 'researchproducts';
     // Cast methods to array for easy handling
     protected $fillable = [
         'menu_id',

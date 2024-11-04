@@ -13,11 +13,6 @@ class CreateMembersTable extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); // Member name
-            $table->string('role'); // Member role
-            $table->string('email')->nullable(); // Member email
-            $table->string('photo')->nullable(); // Photo file path
-            $table->foreignId('startup_id')->constrained()->onDelete('cascade'); // Foreign key relationship to startups
             $table->timestamps();
         });
     }

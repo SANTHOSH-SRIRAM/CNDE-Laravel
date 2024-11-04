@@ -16,7 +16,12 @@
 
 <body class="w-full bg-white  px-6 flex flex-col gap-2 py-3 h-max">
     <div class="flex flex-col gap-10">
-    <img src="{{ asset('storage/' . $landing->hero_img)   }}" alt="" class="w-full h-[68.92vh]">
+    @if($landing)
+    <img src="{{ asset('storage/' . $landing->hero_img) }}" alt="" class="w-full h-[68.92vh]">
+@else
+    <!-- Optional: Display a default image or message -->
+    <p>No hero image available.</p>
+@endif
 
         <div>
             @include('landing.landingSec1', ['activeTab' => $activeTab, 'discovers' => $discovers, 'menus' => $menus])

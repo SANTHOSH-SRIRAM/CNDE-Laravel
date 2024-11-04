@@ -21,12 +21,13 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 ">
                     <!-- Second Image with Caption -->
+                    @foreach ($startups as $startup)
                     <div class="flex flex-col items-center bg-[#F0F0F0] rounded-3xl h-72 ">
-                    <x-svg.iconSvg type="dhvani" class="h-8 w-8 mr-2" aria-label="Products Icon" />
-                        <span>Dhvani Research</span>
+                        <img src="{{ $startup->submenu->image ? asset('storage/' . $startup->submenu->image) : '' }}" alt="">
+                        <span>{{ $startup->submenu->name }}</span>
                         
                     </div>
-
+                    @endforeach
                     <!-- Third Image with Caption -->
                     <div class="flex flex-col items-center bg-[#F0F0F0] rounded-3xl h-72">
                         

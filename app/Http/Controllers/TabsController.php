@@ -7,6 +7,7 @@ use App\Models\Discover;
 use App\Models\Landing;
 use App\Models\Menus;
 use App\Models\OurOutput;
+use App\Models\Startups;
 use Illuminate\Http\Request;
 
 class TabsController extends Controller
@@ -23,7 +24,7 @@ class TabsController extends Controller
         $clients = Clients::all();
         $landing = Landing::first();
         $ouroutputs = OurOutput::all() ?? [];
-
+        $startups = Startups::all();
         
         foreach ($clients as $client) {
             if (is_string($client->logo_paths)) {
@@ -37,6 +38,7 @@ class TabsController extends Controller
             'clients' => $clients,
             'landing' => $landing, // Include landing data
             'ouroutputs' => $ouroutputs, // Include our output data
+            'startups' => $startups,
         ]);
     }
 

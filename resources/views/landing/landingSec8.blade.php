@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CNDE Clients</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
+
 <body class="bg-gray-50">
 
     <!-- Main Image Section -->
     <div class="relative">
-        <img src="{{ asset('storage/' . $landing->footer_img)   }}" alt="Deers" class="w-full h-[400px] object-cover rounded-t-3xl">
+        @if($landing)
+        <img src="{{ asset('storage/' . $landing->footer_img) }}" alt="" class="w-full h-[68.92vh]">
+        @else
+        <!-- Optional: Display a default image or message -->
+        <p>No footer image available.</p>
+        @endif
     </div>
 
     <!-- Container -->
@@ -30,9 +37,9 @@
 
             <!-- Social Icons -->
             <div class="flex space-x-4 mt-6">
-            <x-svg.iconSvg type="linkedin" class="h-2 w-6" />
-        <x-svg.iconSvg type="instagram" class="h-2 w-6" />
-        <x-svg.iconSvg type="facebook" class="h-2 w-6" />
+                <x-svg.iconSvg type="linkedin" class="h-2 w-6" />
+                <x-svg.iconSvg type="instagram" class="h-2 w-6" />
+                <x-svg.iconSvg type="facebook" class="h-2 w-6" />
             </div>
         </div>
 
@@ -64,4 +71,5 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 </body>
+
 </html>

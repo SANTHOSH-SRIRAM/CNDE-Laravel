@@ -18,7 +18,15 @@ class StartupsController extends Controller
         // Return the 'startups.index' view and pass the startups data
         return view('startups.startups', compact('startups'));
     }
-
+    public function landingStartups()
+    {
+        // Fetch all startups from the database
+        $startups = Startups::all();
+        
+        $menus = Menus::with('submenus')->get();
+        // Return the 'startups.index' view and pass the startups data
+        return view('landing.landingSec5', compact('startups', 'menus'));
+    }
     // Show a specific startup based on its ID
     public function show($id)
     {
