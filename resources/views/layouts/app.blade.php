@@ -83,16 +83,11 @@
 
           @else
           <a
-          @else
-          <a
             href="{{ route('login') }}"
             class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
             Log in
           </a>
-          </a>
 
-          @if (Route::has('register'))
-          <a
           @if (Route::has('register'))
           <a
             href="{{ route('register') }}"
@@ -107,29 +102,24 @@
       <div>
         @include('menuItems')
       </div>
-          </a>
-          @endif
-          @endauth
-        </nav>
-        @endif
-      </div>
-      <div>
-        @include('menuItems')
-      </div>
 
     </div>
-    </div>
 
+<!-- Page Heading -->
+@isset($header)
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            {{ $header }}
+        </div>
+    </header>
+@endisset
 
-    <div class="w-full bg-white  px-12 flex flex-col gap-20 items-center">
-      @yield('content')
-      <!-- Page Content -->
+<div class="w-full bg-white  px-6 flex flex-col gap-20 items-center">
+            @yield('content')
+            <!-- Page Content -->
 
-    </div>
-  </div>
-
-
-  
-</body>
-
+            </div>     
+        </div>
+    </body>
+    
 </html>
