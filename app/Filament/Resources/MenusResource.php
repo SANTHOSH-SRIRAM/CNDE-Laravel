@@ -25,19 +25,22 @@ class MenusResource extends Resource
                     ->required()
                     ->label('Menu Name'),
 
+                Forms\Components\TextInput::make('url')
+                    ->label('URL'),
+                    
                 // Repeater for Submenus
                 Forms\Components\Repeater::make('submenus')  // Related submenus
                     ->relationship('submenus')  // Use the submenu relationship
                     ->schema([
                         Forms\Components\TextInput::make('name')
-                            ->required()
+
                             ->label('Submenu Name'),
 
-                            Forms\Components\FileUpload::make('image')
+                        Forms\Components\FileUpload::make('image')
                             ->label('Image'),
                         // Subparent Menu Name Input
                         Forms\Components\TextInput::make('subparent_name')
-                            ->required()
+
                             ->label('Subparent Menu Name'),
 
                         // Add further customization here for child submenus if necessary
@@ -61,7 +64,7 @@ class MenusResource extends Resource
             ->filters([])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                
+
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

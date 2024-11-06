@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <div class="mx-auto w-full flex border-y-black py-10 border-y justify-between">
+    <div class="mx-auto w-full flex border-y-black py-10 border-y justify-between" id="verticaloutput">
         <div class=" w-1/3 border-x-black border-r flex flex-col gap-3">
-            <h1 class="2xl:text-7xl md:text-4xl font-montserrat font-[600] text-left flex-col w-1/2 ">OUR OUTPUT</h1>
+            <h1 class="2xl:text-7xl md:text-4xl font-montserrat font-[600] text-left flex-col w-1/2 " id="col_leftoutput">OUR OUTPUT</h1>
         </div>
 
         <div class="grid 2xl:grid-cols-2 md:grid-cols-1 gap-4 w-3/5">
@@ -111,6 +111,43 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                ScrollTrigger.update();
+                requestAnimationFrame(raf);
+            }
+
+            requestAnimationFrame(raf);
+
+            const section_1 = document.getElementById("verticaloutput");
+            const col_left = document.getElementById("col_leftoutput");
+
+            const updateHeight = () => {
+                const height = section_1.offsetHeight - col_left.offsetHeight - 100;
+
+                const timeln = gsap.timeline({ paused: true });
+                timeln.fromTo(col_left, { y: 0 }, { y: height, duration: 1, ease: 'none' });
+
+                ScrollTrigger.create({
+                    animation: timeln,
+                    trigger: section_1,
+                    start: 'top top',
+                    end: `+=${height}`,
+                    scrub: true
+                });
+            };
+
+            window.addEventListener("load", updateHeight);
+            window.addEventListener("resize", updateHeight);
+        });
+    </script>
 </body>
 
 </html>

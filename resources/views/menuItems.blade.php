@@ -27,7 +27,7 @@
                                 </a>
                                 @elseif ($submenu->startups->isNotEmpty())
                                 <a href="{{ route('startups.show', $submenu->startups->first()->id) }}" class="text-gray-700 hover:text-black">
-                                    {{ $submenu->name }} - Startup: {{ $submenu->startups->first()->name }}
+                                    {{ $submenu->name }} 
                                 </a>
                                 @elseif ($submenu->research->isNotEmpty())
                                 <a href="{{ route('research.show', ['submenu_name' => $submenu->name]) }}" class="text-gray-700 hover:text-black">
@@ -59,7 +59,7 @@
                                     {{ $submenu->name }}
                                 </a>
                                 @else
-                                <span class="text-gray-700">{{ $submenu->name }} - No linked data</span>
+                                <span class="text-gray-700">{{ $submenu->name }}</span>
                                 @endif
                             </li>
                             @endforeach
